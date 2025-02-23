@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed = 5f;
     private float direction = 0f;
+    public float jumpSpeed =8f;
     private Rigidbody2D player;
     
     void Start()
@@ -24,6 +25,10 @@ public class PlayerController : MonoBehaviour
         }
         else {
              player.linearVelocity = new Vector2(0, player.linearVelocity.y);
+        }
+
+        if(Input.GetKeyDown("space")){
+            player.linearVelocity = new Vector2(player.linearVelocity.x, jumpSpeed);
         }
     }
 }
